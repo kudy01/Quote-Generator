@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import './App.css';
-
+import './styles.css'
 class App extends Component {
 
   constructor(){
     super();
     this.state = {
-      quote: '',
-      author: '',
+      quote: 'Intelligence is the ability to adapt to change.',
+      author: 'Stephen Hawking',
       quotes: []
     }
   }
@@ -31,10 +31,12 @@ class App extends Component {
   render() {
   return (
     <div>
-      <h1>Random Quote Generator</h1>
-      <button onClick= {this.onClickGenerate}> Generate </button>
-      <h2>{this.state.quote}</h2>
-      <p>{this.state.author}</p>
+      <h1 className="header">Quote Generator</h1>
+      <div className="quote" id="quote-container">
+        <h2 className="quote__text" >{this.state.quote}</h2>
+        <p className="quote__author" >{this.state.author}</p>
+        <button className="quote__button -new" onClick= {this.onClickGenerate} > New Quote </button>
+      </div>
     </div>
   )
 
